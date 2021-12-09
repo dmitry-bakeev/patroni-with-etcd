@@ -1,0 +1,25 @@
+---
+ansible_python_interpreter: /usr/bin/python3
+ansible_user: root
+ansible_ssh_private_key_file: ./ansible.pem
+
+remote_user: ubuntu
+cache_time: 604800 # one week in seconds
+ssh_public_key_file: ./ansible.pub
+
+
+etcd1_and_haproxy: server1_ip_or_domain
+etcd2: server2_ip_or_domain
+etcd3: server3_ip_or_domain
+
+
+etcd_password: password
+
+etcd_name_main: etcd1
+etcd_host_main: "{{ etcd1_and_haproxy }}"
+
+etcd_name_second: etcd2
+etcd_host_second: "{{ etcd2 }}"
+
+etcd_name_third: etcd3
+etcd_host_third: "{{ etcd3 }}"

@@ -1,0 +1,6 @@
+# Ignore ssh keys
+*.pem
+*.pub
+
+# Ignore variables
+all.yml
