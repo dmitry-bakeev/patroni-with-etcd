@@ -23,3 +23,6 @@ etcd_host_second: "{{ etcd2 }}"
 
 etcd_name_third: etcd3
 etcd_host_third: "{{ etcd3 }}"
+
+postgres1: server4_ip_or_domain
+postgres2: server5_ip_or_domain

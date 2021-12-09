@@ -38,10 +38,30 @@
       cache_valid_time: "{{ cache_time }}"
       upgrade: yes
 
+- hosts: etcd_cluster
+  become: yes
+
+  tasks:
   - name: Install etcd
     apt:
       name: etcd
       state: latest
 
+- hosts: postgres_cluster
+  become: yes
+
+  tasks:
+  - name: Install postgres
+    apt:
+      name: "{{ item }}"
+      state: latest
+    loop:
+      - postgresql
+      - postgresql-contrib
+
+- hosts: all
+  become: yes
+
+  tasks:
   - name: Reboot servers
     reboot:
