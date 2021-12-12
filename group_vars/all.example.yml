@@ -30,3 +30,5 @@ postgres2: server5_ip_or_domain
 postgres_password: your_postgres_password
 
 postgres_replicator_password: your_postgres_replicator_password
+
+haproxy1: server6_ip_or_domain

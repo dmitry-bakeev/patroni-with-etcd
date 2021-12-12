@@ -1,0 +1,22 @@
+---
+- name: Install and config haproxy
+  hosts: haproxy_cluster
+  gather_facts: no
+  become: yes
+
+  tasks:
+    - name: Install haproxy
+      apt:
+        name: haproxy
+        state: latest
+
+    - name: Add config to haproxy
+      template:
+        src: templates/haproxy.cfg.j2
+        dest: /etc/haproxy/haproxy.cfg
+
+    - name: Restart and enabled haproxy service
+      service:
+        name: haproxy
+        enabled: yes
+        state: restarted

@@ -14,3 +14,7 @@ all:
           ansible_host: "{{ postgres1 }}"
         postgres2:
           ansible_host: "{{ postgres2 }}"
+    haproxy_cluster:
+      hosts:
+        haproxy1:
+          ansible_host: "{{ haproxy1 }}"
