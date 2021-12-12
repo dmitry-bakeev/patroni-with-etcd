@@ -28,3 +28,5 @@ postgres1: server4_ip_or_domain
 postgres2: server5_ip_or_domain
 
 postgres_password: your_postgres_password
+
+postgres_replicator_password: your_postgres_replicator_password

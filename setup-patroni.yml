@@ -19,15 +19,10 @@
         enabled: no
         state: stopped
 
-    # - name: Remove all postgresql files
-    #   shell:
-    #     cmd: /bin/rm -rf /var/lib/postgresql/12/main/*
-
-    - name: Create symbolic link
-      file:
-        src: /usr/lib/postgresql/12/bin/*
-        dest: /usr/sbin/
-        state: link
+    - name: Create symlinks
+      shell:
+        cmd: "/usr/bin/ln -s /usr/lib/postgresql/12/bin/* /usr/sbin/"
+      ignore_errors: yes
 
     - name: Install patroni
       pip:
